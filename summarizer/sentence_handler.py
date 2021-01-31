@@ -1,11 +1,11 @@
 from typing import List
 
-from spacy.lang.en import English
+from spacy.lang.zh import Chinese
 
 
 class SentenceHandler(object):
 
-    def __init__(self, language=English):
+    def __init__(self, language=Chinese):
         self.nlp = language()
         self.nlp.add_pipe(self.nlp.create_pipe('sentencizer'))
 
