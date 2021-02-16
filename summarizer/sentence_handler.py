@@ -7,7 +7,7 @@ class SentenceHandler(object):
 
     def __init__(self, language=Chinese):
         self.nlp = language()
-        self.nlp.add_pipe(self.nlp.create_pipe('sentencizer'))
+        self.nlp.add_pipe('sentencizer')
 
     def process(self, body: str, min_length: int = 40, max_length: int = 600) -> List[str]:
         """
