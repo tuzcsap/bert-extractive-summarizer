@@ -6,7 +6,7 @@ from spacy.lang.zh import Chinese
 class SentenceHandler(object):
 
     def __init__(self, language=Chinese):
-        self.nlp = language()
+        self.nlp = spacy.load('zh_core_web_sm')
         try:
             self.nlp.add_pipe(self.nlp.create_pipe('sentencizer'))
             self.is_spacy_3 = False
